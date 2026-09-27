@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kallal Das | AI Product Manager & Scrum Master</title>
+    <meta name="description" content="Kallal Das - AI Product Manager & Certified Scrum Master with 7+ years in software delivery. Based in Dhaka, Bangladesh.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #09090b;
+            --bg-elevated: #18181b;
+            --bg-card: rgba(24, 24, 27, 0.6);
+            --text: #fafafa;
+            --text-secondary: #a1a1aa;
+            --accent: #22d3ee;
+            --accent-2: #a78bfa;
+            --accent-3: #34d399;
+            --gradient: linear-gradient(135deg, #22d3ee, #a78bfa);
+            --gradient-subtle: linear-gradient(135deg, rgba(34,211,238,0.1), rgba(167,139,250,0.1));
+            --border: rgba(255,255,255,0.06);
+            --border-hover: rgba(255,255,255,0.12);
+            --glass: rgba(24, 24, 27, 0.5);
+            --glow: 0 0 40px rgba(34,211,238,0.08);
+        }
+
+        [data-theme="light"] {
+            --bg: #fafafa;
+            --bg-elevated: #ffffff;
+            --bg-card: rgba(255,255,255,0.7);
+            --text: #09090b;
+            --text-secondary: #71717a;
+            --border: rgba(0,0,0,0.06);
+            --border-hover: rgba(0,0,0,0.12);
+            --glass: rgba(255,255,255,0.6);
+            --glow: 0 0 40px rgba(34,211,238,0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background 0.4s, color 0.4s;
+            overflow-x: hidden;
+        }
+
+        /* GRAIN OVERLAY */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            backdrop-filter: blur(20px) saturate(1.5);
+            background: var(--glass);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0.8rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links { display: flex; gap: 1.75rem; align-items: center; }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-links a:hover { color: var(--accent); }
+
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 0.4rem 0.65rem;
+            cursor: pointer;
+            font-size: 0.95rem;
+            color: var(--text);
+            transition: border-color 0.3s, transform 0.2s;
+        }
+
+        .theme-toggle:hover { border-color: var(--accent); transform: scale(1.05); }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        /* MAIN */
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section { padding: 5rem 0; }
+
+        .section-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            color: var(--text);
+            letter-spacing: -0.02em;
+        }
+
+        /* HERO */
+        .hero {
+            padding-top: 8rem;
+            padding-bottom: 2rem;
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-photo-wrapper {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .hero-photo-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 50%;
+            background: var(--gradient);
+            z-index: -1;
+        }
+
+        .hero-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--bg);
+            display: block;
+        }
+
+        .hero-content { flex: 1; }
+
+        .hero-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--gradient-subtle);
+            border: 1px solid var(--border);
+            backdrop-filter: blur(10px);
+            color: var(--accent);
+            padding: 0.35rem 0.85rem;
+            border-radius: 24px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            letter-spacing: 0.02em;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-3);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(52,211,153,0.4); }
+            50% { opacity: 0.6; box-shadow: 0 0 0 6px rgba(52,211,153,0); }
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.03em;
+        }
+
+        .hero h1 .gradient-text {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-tagline {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.75rem;
+            line-height: 1.6;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            gap: 0.75rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.5rem;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            letter-spacing: 0.01em;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: #09090b;
+        }
+
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(34,211,238,0.25); }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .btn-secondary:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+        /* METRICS */
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .metric {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            box-shadow: var(--glow);
+            transition: all 0.3s;
+        }
+
+        .metric:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(34,211,238,0.08);
+        }
+
+        .metric-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .metric-label {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* ABOUT */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .about-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.75rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+        }
+
+        .about-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+
+        .about-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .about-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        /* TOOLKIT */
+        .toolkit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .toolkit-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .toolkit-card:hover { border-color: var(--border-hover); transform: translateY(-3px); }
+
+        .toolkit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gradient);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .toolkit-card:hover::before { opacity: 1; }
+
+        .toolkit-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+
+        .toolkit-card p {
+            font-size: 0.825rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .toolkit-tag {
+            display: inline-block;
+            background: var(--gradient-subtle);
+            border: 1px solid var(--border);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 8px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        /* EXPERIENCE */
+        .timeline { position: relative; }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-left: 1px solid var(--border);
+        }
+
+        .timeline-item:last-child { padding-bottom: 0; }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 0.4rem;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--text-secondary);
+            border: 2px solid var(--bg);
+        }
+
+        .timeline-item.current::before {
+            background: var(--accent);
+            box-shadow: 0 0 0 4px rgba(34,211,238,0.15);
+        }
+
+        .timeline-role {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .timeline-company {
+            font-size: 0.875rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .timeline-date {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-desc {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .timeline-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.6rem;
+        }
+
+        .timeline-tag {
+            background: var(--gradient-subtle);
+            border: 1px solid var(--border);
+            color: var(--accent);
+            padding: 0.15rem 0.55rem;
+            border-radius: 6px;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        /* PROJECTS */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.75rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card:hover { border-color: var(--border-hover); transform: translateY(-3px); }
+
+        .project-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .project-type {
+            font-size: 0.78rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.02em;
+        }
+
+        .project-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .project-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 1rem;
+        }
+
+        .project-metric {
+            display: inline-block;
+            background: var(--gradient-subtle);
+            border: 1px solid var(--border);
+            color: var(--accent);
+            padding: 0.2rem 0.65rem;
+            border-radius: 8px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        /* SKILLS */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-pill {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 0.45rem 0.95rem;
+            border-radius: 24px;
+            font-size: 0.825rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .skill-pill:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .skill-pill.highlight {
+            background: var(--gradient-subtle);
+            border-color: rgba(34,211,238,0.2);
+            color: var(--accent);
+        }
+
+        /* CERTS */
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .cert-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem 1.25rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+        }
+
+        .cert-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+
+        .cert-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .cert-card p {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+        }
+
+        /* CONTACT */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .contact-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem 1.25rem;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+        }
+
+        .contact-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(34,211,238,0.1);
+        }
+
+        .contact-icon {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .contact-item h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .contact-item p {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            word-break: break-all;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.78rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* FADE IN */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+                padding-top: 6rem;
+            }
+
+            .hero h1 { font-size: 2.25rem; }
+            .hero-cta { justify-content: center; }
+            .hero-status { justify-content: center; }
+            .metrics { grid-template-columns: repeat(2, 1fr); }
+            .about-grid { grid-template-columns: 1fr; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .certs-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-grid { grid-template-columns: repeat(2, 1fr); }
+
+            .nav-links { display: none; }
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--glass);
+                backdrop-filter: blur(20px);
+                border-bottom: 1px solid var(--border);
+                padding: 1rem 2rem;
+                gap: 1rem;
+            }
+
+            .hamburger { display: block; }
+            main { padding: 0 1.25rem; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.85rem; }
+            .hero-photo { width: 120px; height: 120px; }
+            .metrics { gap: 0.75rem; }
+            .metric-number { font-size: 1.6rem; }
+            .section-title { font-size: 1.6rem; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * { animation: none !important; transition: none !important; }
+            html { scroll-behavior: auto; }
+            .fade-in { opacity: 1; transform: none; }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+    <nav>
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">Kallal Das</a>
+            <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Toggle menu">&#9776;</button>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#toolkit">AI Toolkit</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">&#9728;</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="hero-photo-wrapper">
+                <img src="profile.jpeg" alt="Kallal Das" class="hero-photo">
+            </div>
+            <div class="hero-content">
+                <div class="hero-status">
+                    <span class="status-dot"></span>
+                    Open to opportunities
+                </div>
+                <h1>I build products<br>with <span class="gradient-text">AI & Agile</span></h1>
+                <p class="hero-tagline">AI Product Manager & Certified Scrum Master with 7+ years shipping software for international clients. Based in Dhaka, Bangladesh.</p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Get in touch</a>
+                    <a href="https://linkedin.com/in/kallal-das-csm" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- METRICS -->
+        <div class="metrics fade-in">
+            <div class="metric">
+                <div class="metric-number" data-target="7">0</div>
+                <div class="metric-label">Years in Delivery</div>
+            </div>
+            <div class="metric">
+                <div class="metric-number" data-target="40">0</div>
+                <div class="metric-label">Projects Managed</div>
+            </div>
+            <div class="metric">
+                <div class="metric-number" data-target="160">0</div>
+                <div class="metric-label">% Business Growth</div>
+            </div>
+            <div class="metric">
+                <div class="metric-number" data-target="6">0</div>
+                <div class="metric-label">Concurrent Streams</div>
+            </div>
+        </div>
+
+        <!-- ABOUT -->
+        <section id="about" class="fade-in">
+            <p class="section-label">About</p>
+            <h2 class="section-title">Two roles. One mission: ship better products.</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <span class="about-icon">&#9881;</span>
+                    <h3>Scrum Master @ Tulip Tech</h3>
+                    <p>Managing 3 product streams: VelaCrew.ai (AI workforce platform), StretchSense MDM (enterprise XR), and Sonali Pay UK (fintech). Sprints, QA, design reviews, and Jira across an 8-person team.</p>
+                </div>
+                <div class="about-card">
+                    <span class="about-icon">&#10024;</span>
+                    <h3>AI Product Manager @ Curi</h3>
+                    <p>Owning AI-powered product areas end-to-end at a B2B SaaS platform. Designing agent workflows, running customer discovery, and partnering with engineering on LLMs and RAG.</p>
+                </div>
+                <div class="about-card">
+                    <span class="about-icon">&#128187;</span>
+                    <h3>CS Degree + Dev Background</h3>
+                    <p>3 years of production full-stack development before moving to PM. I read PRs, understand APIs, and speak engineering's language fluently.</p>
+                </div>
+                <div class="about-card">
+                    <span class="about-icon">&#9889;</span>
+                    <h3>AI-Powered Workflows</h3>
+                    <p>Claude Code + MCP integrations (Jira, GitHub) automate my sprint reporting, code review, story generation, and ticket triage. 5-6 hours saved every week.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI TOOLKIT -->
+        <section id="toolkit" class="fade-in">
+            <p class="section-label">AI Toolkit</p>
+            <h2 class="section-title">What I use daily</h2>
+            <div class="toolkit-grid">
+                <div class="toolkit-card">
+                    <span class="toolkit-tag">Core</span>
+                    <h3>Claude Code + MCP</h3>
+                    <p>Connected to Jira and GitHub. Automates sprint reports, PR reviews, user story drafts, and ticket triage.</p>
+                </div>
+                <div class="toolkit-card">
+                    <span class="toolkit-tag">Ops</span>
+                    <h3>Claude Projects</h3>
+                    <p>Custom instructions for support ticket triage. Categorises and prioritises before I review.</p>
+                </div>
+                <div class="toolkit-card">
+                    <span class="toolkit-tag">Product</span>
+                    <h3>LLMs, RAG & Agents</h3>
+                    <p>Prompt engineering, AI agent design, model evaluation, and human-in-the-loop systems.</p>
+                </div>
+                <div class="toolkit-card">
+                    <span class="toolkit-tag">Enterprise</span>
+                    <h3>StretchSense MDM</h3>
+                    <p>Enterprise XR device management portal. Managing specs, user stories, RBAC, and phased delivery for VR/glove hardware.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience" class="fade-in">
+            <p class="section-label">Experience</p>
+            <h2 class="section-title">Career timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item current">
+                    <div class="timeline-role">AI Product Manager</div>
+                    <div class="timeline-company">Curi (MyCuri Inc.) &middot; Part-time</div>
+                    <div class="timeline-date">Jan 2025 &ndash; Present</div>
+                    <div class="timeline-desc">Own AI product areas end-to-end. Designed agent workflows, drove customer discovery, implemented RAG. 40% engagement increase, 50% user growth, 25% conflict reduction.</div>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag">AI Agents</span>
+                        <span class="timeline-tag">LLMs</span>
+                        <span class="timeline-tag">RAG</span>
+                        <span class="timeline-tag">PRDs</span>
+                    </div>
+                </div>
+                <div class="timeline-item current">
+                    <div class="timeline-role">Scrum Master</div>
+                    <div class="timeline-company">Tulip Tech Ltd. &middot; Full-time</div>
+                    <div class="timeline-date">Jan 2025 &ndash; Present</div>
+                    <div class="timeline-desc">Managing multiple product streams: VelaCrew.ai (AI workforce platform &mdash; sprints, QA, design reviews, Jira for 8-person team), StretchSense MDM (enterprise XR device management), and Sonali Pay UK (fintech, cross-timezone delivery).</div>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag">VelaCrew.ai</span>
+                        <span class="timeline-tag">StretchSense MDM</span>
+                        <span class="timeline-tag">Fintech</span>
+                        <span class="timeline-tag">Jira</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-role">Scrum Master</div>
+                    <div class="timeline-company">Bongo BD</div>
+                    <div class="timeline-date">Jul 2022 &ndash; Dec 2024</div>
+                    <div class="timeline-desc">6 concurrent product workstreams at Bangladesh's leading OTT platform. Sprint completion +20%, project progression +15%.</div>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag">OTT</span>
+                        <span class="timeline-tag">6 Streams</span>
+                        <span class="timeline-tag">+20%</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-role">Project Manager (First PM Hire)</div>
+                    <div class="timeline-company">Viser X</div>
+                    <div class="timeline-date">Jan 2019 &ndash; Jul 2022</div>
+                    <div class="timeline-desc">Built PM function from scratch, reporting to CEO. 40+ projects end-to-end, 160% business growth, 25+ new projects acquired.</div>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag">40+ Projects</span>
+                        <span class="timeline-tag">160% Growth</span>
+                        <span class="timeline-tag">First Hire</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-role">Full-Stack Developer</div>
+                    <div class="timeline-company">High5 Digital &middot; Parallax Logic</div>
+                    <div class="timeline-date">Jan 2016 &ndash; Jan 2019</div>
+                    <div class="timeline-desc">WordPress, JavaScript, PHP, REST APIs. 5 projects with $500K combined budgets.</div>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag">WordPress</span>
+                        <span class="timeline-tag">JavaScript</span>
+                        <span class="timeline-tag">Full-Stack</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="fade-in">
+            <p class="section-label">Projects</p>
+            <h2 class="section-title">What I've shipped</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Curi AI Platform</h3>
+                    <div class="project-type">B2B SaaS &middot; AI Product</div>
+                    <p>AI-powered coaching platform using LLMs. Designed agent workflows, implemented RAG, built transparency features that drove user trust and adoption.</p>
+                    <div class="project-metrics">
+                        <span class="project-metric">+40% Engagement</span>
+                        <span class="project-metric">+50% Users</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>VelaCrew.ai</h3>
+                    <div class="project-type">AI SaaS &middot; Workforce Platform</div>
+                    <p>AI-first work platform where users deploy autonomous AI agents as a crew — PM agents, CRM agents, support agents. Managing sprints, QA, design reviews, and Jira for a team of 8.</p>
+                    <div class="project-metrics">
+                        <span class="project-metric">AI Agents</span>
+                        <span class="project-metric">8-Person Team</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Bongo BD OTT</h3>
+                    <div class="project-type">Media &middot; Streaming</div>
+                    <p>6 concurrent workstreams at Bangladesh's leading OTT platform. Engineering, content, licensing, and marketing alignment.</p>
+                    <div class="project-metrics">
+                        <span class="project-metric">+20% Sprint Completion</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>StretchSense MDM Portal</h3>
+                    <div class="project-type">Enterprise &middot; XR / IoT</div>
+                    <p>Enterprise MDM platform for managing VR headsets, StretchSense Reality Gloves, and XR training hardware. Device enrolment, RBAC, configuration distribution, and real-time telemetry.</p>
+                    <div class="project-metrics">
+                        <span class="project-metric">Enterprise XR</span>
+                        <span class="project-metric">Tulip Tech</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="fade-in">
+            <p class="section-label">Skills</p>
+            <h2 class="section-title">What I work with</h2>
+            <div class="skills-container">
+                <span class="skill-pill highlight">AI Product Management</span>
+                <span class="skill-pill highlight">Scrum / Agile</span>
+                <span class="skill-pill highlight">Claude Code + MCP</span>
+                <span class="skill-pill highlight">Prompt Engineering</span>
+                <span class="skill-pill">LLMs & RAG</span>
+                <span class="skill-pill">AI Agents</span>
+                <span class="skill-pill">PRD Writing</span>
+                <span class="skill-pill">Customer Discovery</span>
+                <span class="skill-pill">Stakeholder Management</span>
+                <span class="skill-pill">Sprint Facilitation</span>
+                <span class="skill-pill">Jira</span>
+                <span class="skill-pill">Monday.com</span>
+                <span class="skill-pill">ClickUp</span>
+                <span class="skill-pill">GitHub</span>
+                <span class="skill-pill">Figma</span>
+                <span class="skill-pill">JavaScript</span>
+                <span class="skill-pill">Python</span>
+                <span class="skill-pill">SQL</span>
+                <span class="skill-pill">REST APIs</span>
+                <span class="skill-pill">WordPress</span>
+                <span class="skill-pill">Next.js</span>
+                <span class="skill-pill">Node.js</span>
+                <span class="skill-pill">AWS</span>
+                <span class="skill-pill">KPI Reporting</span>
+                <span class="skill-pill">Change Management</span>
+            </div>
+        </section>
+
+        <!-- CERTS -->
+        <section id="certifications" class="fade-in">
+            <p class="section-label">Credentials</p>
+            <h2 class="section-title">Certifications & Education</h2>
+            <div class="certs-grid">
+                <div class="cert-card">
+                    <h3>CSM</h3>
+                    <p>Certified ScrumMaster<br>Scrum Alliance</p>
+                </div>
+                <div class="cert-card">
+                    <h3>PMP</h3>
+                    <p>In Progress<br>Exam: Nov 2026</p>
+                </div>
+                <div class="cert-card">
+                    <h3>IELTS 7</h3>
+                    <p>British Council</p>
+                </div>
+                <div class="cert-card">
+                    <h3>BSc CSE</h3>
+                    <p>North South University<br>2010 - 2016</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="fade-in">
+            <p class="section-label">Contact</p>
+            <h2 class="section-title">Let's connect</h2>
+            <div class="contact-grid">
+                <a href="mailto:kallal.nsu103@gmail.com" class="contact-item">
+                    <span class="contact-icon">&#9993;</span>
+                    <h3>Email</h3>
+                    <p>kallal.nsu103@gmail.com</p>
+                </a>
+                <a href="https://linkedin.com/in/kallal-das-csm" target="_blank" rel="noopener" class="contact-item">
+                    <span class="contact-icon">in</span>
+                    <h3>LinkedIn</h3>
+                    <p>kallal-das-csm</p>
+                </a>
+                <a href="https://github.com/Kallal103" target="_blank" rel="noopener" class="contact-item">
+                    <span class="contact-icon">&lt;/&gt;</span>
+                    <h3>GitHub</h3>
+                    <p>Kallal103</p>
+                </a>
+                <a href="tel:+8801318878021" class="contact-item">
+                    <span class="contact-icon">&#9742;</span>
+                    <h3>Phone</h3>
+                    <p>+8801318878021</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Kallal Das &middot; Dhaka, Bangladesh</p>
+    </footer>
+
+    <script>
+        // Theme toggle
+        function toggleTheme() {
+            const body = document.body;
+            const current = body.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            body.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            document.querySelector('.theme-toggle').textContent = next === 'dark' ? '\u2600' : '\u263E';
+        }
+
+        const saved = localStorage.getItem('theme');
+        if (saved) {
+            document.body.setAttribute('data-theme', saved);
+            document.querySelector('.theme-toggle').textContent = saved === 'dark' ? '\u2600' : '\u263E';
+        }
+
+        // Close mobile menu
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        // Fade in on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Counter animation
+        function animateCounters() {
+            document.querySelectorAll('.metric-number[data-target]').forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const suffix = counter.closest('.metric').querySelector('.metric-label').textContent.includes('%') ? '' : '+';
+                const duration = 1500;
+                const start = performance.now();
+
+                function update(now) {
+                    const elapsed = now - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    const current = Math.round(eased * target);
+                    counter.textContent = current + suffix;
+                    if (progress < 1) requestAnimationFrame(update);
+                }
+
+                requestAnimationFrame(update);
+            });
+        }
+
+        const metricsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    metricsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const metricsEl = document.querySelector('.metrics');
+        if (metricsEl) metricsObserver.observe(metricsEl);
+    </script>
+</body>
+</html>
